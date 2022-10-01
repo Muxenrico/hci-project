@@ -1,0 +1,244 @@
+/* IMPORT FONTS */
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto-Black.ttf);
+  font-weight: 900;
+}
+
+/* CSS KHUSUS NAVBAR */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/* MAIN CONTAINER */
+
+nav {
+  width: 100%;
+  height: 80px;
+  background-color: #001d3d;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  z-index: 100;
+}
+
+#logo-navbar-img {
+  position: absolute;
+  left: 100px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/laforant-logo-yellow.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#menu {
+  margin-left: 180px;
+  display: flex;
+  flex-direction: row;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-title {
+  color: white;
+  padding: 33px 20px 30px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  border-bottom: 3px solid transparent;
+  transition: all 300ms;
+}
+
+.dropdown:hover .menu-title,
+.menu-title:hover {
+  border-bottom: 3px solid #ffd60a;
+}
+
+.dropdown .menu-title:hover {
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #001d3d;
+  min-width: 160px;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 16px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #0b2c51;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-arrow {
+  margin-left: 8px;
+  height: 10px;
+  width: 10px;
+}
+
+/* PRE-REGISTER BUTTON */
+
+#pre-reg-btn {
+  background-color: #ffd60a;
+  border: none;
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 14px;
+  position: absolute;
+  right: 80px;
+}
+
+#pre-reg-btn:hover {
+  background-color: #ffe460;
+  cursor: pointer;
+}
+
+/* RESPONSIVE STUFF */
+/* WEB NAME */
+
+#logo-navbar-text {
+  display: none;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffd60a;
+}
+
+/* MENU BUTTON */
+
+#menu-btn {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  right: 20px;
+  background-image: url("../images/menu-icon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  nav {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #menu {
+    /* transition: all 500ms ease; */
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin-top: 130px;
+    margin-left: 0px;
+    width: 240px;
+    height: 100vh;
+    right: -240px;
+    background-color: #05274b;
+    box-shadow: none;
+  }
+
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-title {
+    padding: 20px;
+    border-bottom: 1px solid #001226;
+  }
+
+  .dropdown-content {
+    position: relative;
+  }
+
+  .dropdown-content a {
+    padding: 20px;
+    background-color: #103c6e;
+    border-bottom: 1px solid #001226;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown:hover .menu-title,
+  .menu-title:hover {
+    border-bottom: 1px solid #001226;
+  }
+
+  #pre-reg-btn {
+    display: blcok;
+    position: absolute;
+    right: -240px;
+    top: 80px;
+    height: 50px;
+    width: 240px;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  #logo-navbar {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #logo-navbar-text {
+    position: relative;
+    margin-top: 28px;
+    display: flex;
+  }
+
+  #logo-navbar-img {
+    position: relative;
+    display: none;
+    margin-right: 20px;
+    left: 0;
+  }
+
+  #menu-btn {
+    margin-top: 30px;
+    display: block;
+  }
+}
